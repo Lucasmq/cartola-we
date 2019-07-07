@@ -29,9 +29,9 @@ function TimesEstaticos(props) {
     return (
         <div className={"time-" + props.lugar}>
             <div className={"times-escolha flex-coluna"}>
-                <RegioesTimes numeroEscudos={5} nomeHeader={"Europa A"}/>
-                <RegioesTimes numeroEscudos={5} nomeHeader={"Clubes"}/>
-                <RegioesTimes numeroEscudos={1} nomeHeader={"Carregar dados"}/>
+                <RegioesTimes numeroEscudos={5} nomeHeader={"Continentes"} regioes={"cont"}/>
+                <RegioesTimes numeroEscudos={5} nomeHeader={"Clubes"} regioes={"pais"}/>
+                <RegioesTimes numeroEscudos={1} nomeHeader={"Carregar dados"} regioes={"ml"}/>
 
             </div>
         </div>
@@ -42,13 +42,9 @@ function RegioesTimes(props) {
     return (
         <>
             <div className="time-nome margin-top">
-                <div className="seta-esquerda"></div>
-                <div className="r1" >r1</div>
                 <h2 >{props.nomeHeader}</h2>
-                <div className="l1">l1</div>
-                <div className="seta-direita"></div>
             </div>
-            <EscudosEstaticos numeroEscudos={props.numeroEscudos} />
+            <EscudosEstaticos numeroEscudos={props.numeroEscudos} regioes={props.regioes}/>
         </>
     )
 }
@@ -58,7 +54,7 @@ function EscudosEstaticos(props) {
     let numeroEscudos = [];
 
     for (let i = 0; i < props.numeroEscudos; i++) {
-        numeroEscudos.push(<SomenteEscudo key={i} escudo={"http://imagensemoldes.com.br/wp-content/uploads/2017/11/BANDEIRA-DO-BRASIL-EM-VETOR-JPG-PNG-EDITAVEL-0l.png"} />)        
+        numeroEscudos.push(<SomenteEscudo key={i} escudo={"https://cartola-we-api.herokuapp.com/img/bandeiras/"+props.regioes+(i+1)+".png"} />)        
     }
 
     return (
@@ -82,7 +78,6 @@ function Times(props) {
 
     useEffect(() => {
         setMaxPag(props.times.length);
-        // console.log(maxPag);
     }, [maxPag, props.times])
 
     function next() {

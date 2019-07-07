@@ -48,7 +48,7 @@ function Center(props) {
 function EscudoEscolhido(props) {
     return (
         <div className={"escudo-escolhido"+props.player}>
-            { props.times &&  <img src={props.escudo} alt="escudo" />}
+            { props.escudo && <img src={props.escudo} alt="escudo" />}
         </div>
     )
 }
@@ -73,8 +73,13 @@ function NomeTime(props) {
                 <div className={"nome-time"+props.player + (times ? " ": " inicio")}>
                     { times ?  <h2>{props.nomeTime[0]}</h2>: 
                     <>
+                        {/* <button onClick={() => buscaTime()}>OK</button> */}
                         <input autoComplete="off" type="text" onChange={e => setNomeTime(e.target.value)} className="input-time" name="inputTime" value={nomeTime} placeholder="Buscar Time" ></input>
-                        <button onClick={() => buscaTime()}>OK</button>
+                        <div className={"button-bola"+props.player} onClick={() => buscaTime()}>
+                            <div className={"bola"+props.player}>
+                                <span>Buscar</span>    
+                            </div>
+                        </div>
                     </>
                     }
                 </div>

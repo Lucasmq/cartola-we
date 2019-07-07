@@ -14,7 +14,7 @@ export default function Footer(props) {
             <div className="quadrado"></div>
         </div>
         <div className="aleatorio">
-            <h1>Aleatorio</h1>
+            <h1>Aleatório</h1>
         </div>
     </div>
     )

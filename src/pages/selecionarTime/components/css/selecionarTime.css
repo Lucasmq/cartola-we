@@ -441,7 +441,77 @@ h3, h2 {
 .button-quadrado .quadrado{
     width: 15px;
     height: 15px;
-    border: #eea0ec 2px solid;
+    border: #eea0b1 2px solid;
+}
+
+.button-bola1 {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    background: #585a59;
+    border-radius: 50%;
+    justify-content: space-around;
+    align-items: center;
+    /* display: flex; */
+}
+.bola1 > span {
+    /* display: ; */
+    /* position: absolute; */
+    margin-top: -2px;
+    float: left;
+    margin-left: -65px;
+    padding-bottom: 10px;
+    /* margin: 0 0px 20px -65px; */
+}
+
+.button-bola1 .bola1{
+    /* display: flex; */
+    margin-left: 1px;
+    /* margin-top: 1px; */
+
+    /* float: left; */
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: #e46b93 2px solid;
+}
+
+/*bola 2*/
+
+.button-bola2 {
+    position: absolute;
+    margin-left: -155px;
+    display: flex;
+    width: 25px;
+    height: 25px;
+    background: #585a59;
+    border-radius: 50%;
+    justify-content: space-around;
+    align-items: center;
+    /* display: flex; */
+}
+.bola2 > span {
+    /* display: ; */
+    /* position: absolute; */
+    margin-top: -2px;
+    float: left;
+    margin-left: 25px;
+    padding-bottom: 10px;
+    /* margin: 0 0px 20px -65px; */
+}
+
+.button-bola2 .bola2{
+    /* display: flex; */
+    margin-left: 1px;
+    /* margin-top: 1px; */
+
+    /* float: left; */
+    color: white;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: #e46b93 2px solid;
 }
 
 .flex-coluna{
