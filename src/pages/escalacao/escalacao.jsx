@@ -11,7 +11,7 @@ import Scout from '../../components/scouts/scout'
 const URL = "https://cartola-we-api.herokuapp.com/"
    
 const menuHover = new Audio();
-      menuHover.src = URL+'/audio/hover_menu.mp3'
+      menuHover.src = URL+'audio/hover_menu.mp3'
       menuHover.preload = true;
 const menuClick = new Audio();
       menuClick.src = URL+'audio/click_menu.mp3';
