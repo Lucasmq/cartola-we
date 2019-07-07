@@ -13,12 +13,12 @@ function Header(props) {
 }
 
 function Escalacao(props) {
-    let campo = URL+"img/"+props.formacao+".png";
+    let campo = URL+"img/"+props.formacao+".jpg";
     let bancoReserva = "";
     if(props.formacao === '-'){
-        bancoReserva =  URL+"img/bot"+props.formacao+".png";
+        bancoReserva =  URL+"img/bot"+props.formacao+".jpg";
     }else {
-        bancoReserva = URL+"img/bot"+props.player+".png";
+        bancoReserva = URL+"img/bot"+props.player+".jpg";
     }
     return (
         <div className="time1-escalacao">
@@ -42,7 +42,7 @@ function Escalacao(props) {
 
 function Jogador(props) {
 
-    let bracedeiraCap = URL+"img/CAP_"+props.player+".png";
+    let bracedeiraCap = URL+"img/CAP_"+props.player+".jpg";
     function cartao(scoutCartao){
         let cartoes = ["cartao-vermelho" , "cartao-amarelo", "sem-cartao"];
         if(scoutCartao){

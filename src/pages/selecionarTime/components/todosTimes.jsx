@@ -13,7 +13,7 @@ export default function TodosTimes(props) {
 
             <div className="grafico-center">
                 <div className="grafico">
-                    <img src="https://cartola-we-api.herokuapp.com/img/grafico.PNG" alt="grafico" />
+                    <img src="https://cartola-we-api.herokuapp.com/img/grafico.jpg" alt="grafico" />
                 </div>
             </div>
             {props.timesFora ? 
@@ -54,7 +54,7 @@ function EscudosEstaticos(props) {
     let numeroEscudos = [];
 
     for (let i = 0; i < props.numeroEscudos; i++) {
-        numeroEscudos.push(<SomenteEscudo key={i} escudo={"https://cartola-we-api.herokuapp.com/img/bandeiras/"+props.regioes+(i+1)+".png"} />)        
+        numeroEscudos.push(<SomenteEscudo key={i} escudo={"https://cartola-we-api.herokuapp.com/img/bandeiras/"+props.regioes+(i+1)+".jpg"} />)        
     }
 
     return (

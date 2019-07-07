@@ -30,7 +30,7 @@ body::after, body::before {
 }
 
 body {
-    background: url(http://https://cartola-we-api.herokuapp.com/img/back.png) no-repeat center center;
+    background: url(http://https://cartola-we-api.herokuapp.com/img/back.jpg) no-repeat center center;
     /* background-size: 1600px; */
 }
 
