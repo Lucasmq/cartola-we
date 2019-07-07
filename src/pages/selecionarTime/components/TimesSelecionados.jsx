@@ -65,6 +65,12 @@ function NomeTime(props) {
         }
     }
 
+    function verificaEnter(e){
+        if(e.key ==='Enter'){
+            buscaTime();
+        }
+    }
+
     return(
         <div className={"time-nomes"+props.player} >
                 <div className={"nome-lugar"+props.player}>
@@ -74,7 +80,7 @@ function NomeTime(props) {
                     { times ?  <h2>{props.nomeTime[0]}</h2>: 
                     <>
                         {/* <button onClick={() => buscaTime()}>OK</button> */}
-                        <input autoComplete="off" type="text" onChange={e => setNomeTime(e.target.value)} className="input-time" name="inputTime" value={nomeTime} placeholder="Buscar Time" ></input>
+                        <input autoComplete="off" type="text" onKeyDown={(e)=> verificaEnter(e)} onChange={e => setNomeTime(e.target.value)} className="input-time" name="inputTime" value={nomeTime} placeholder="Buscar Time" ></input>
                         <div className={"button-bola"+props.player} onClick={() => buscaTime()}>
                             <div className={"bola"+props.player}>
                                 <span>Buscar</span>    
