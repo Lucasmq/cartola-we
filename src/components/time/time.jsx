@@ -42,7 +42,7 @@ function Escalacao(props) {
 
 function Jogador(props) {
 
-    let bracedeiraCap = URL+"img/CAP_"+props.player+".jpg";
+    let bracedeiraCap = URL+"img/CAP_"+props.player+".png";
     function cartao(scoutCartao){
         let cartoes = ["cartao-vermelho" , "cartao-amarelo", "sem-cartao"];
         if(scoutCartao){
