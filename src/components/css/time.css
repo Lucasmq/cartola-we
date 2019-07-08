@@ -871,7 +871,7 @@ footer .menu-select {
     }
 }
 
-@media only screen and (min-width: 300px)  {
+@media only screen and (max-width: 500px)  {
     body {
         /* background-position: center;  */
         background-size: 300px;
