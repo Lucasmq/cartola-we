@@ -6,6 +6,7 @@ import Time from '../../components/time/time'
 import Menu from '../../components/menu/menu'
 import Footer from '../../components/footer/footer'
 import Scout from '../../components/scouts/scout'
+import Loading from '../loading/loading';
 
 
 const URL = "https://cartola-we-api.herokuapp.com/"
@@ -28,6 +29,8 @@ function Escalacao(props) {
     const [scoutDoJogador, setScoutDoJogador] = useState(null);
     const [nomeJogador, setNomeJogador] = useState(null);
     const [posicaoJogador, setPosicaoJogador] = useState(null);
+    const [loading, setLoading] = useState(true);
+
 
 
     useEffect(() => {
@@ -99,11 +102,24 @@ function Escalacao(props) {
         setPosicaoJogador(posicao);
     }
 
+
+    useEffect(() => {
+        if(timeCasa && timeFora){
+            setTimeout(() => {
+                setLoading(false);
+              }, 500);
+        }else{
+            setLoading(true);
+        }
+    }, [timeCasa, timeFora])
+    
+
     return (
         <>
-        {timeCasa && timeFora && (
+        
             <>
-                <div className="container-escalacao">
+        {loading && <Loading />}
+                <div className="container-escalacao" hidden={loading ? true : false}>
                     <Time player={1} 
                           jogadorSelecionado={jogadorSelecionado} 
                           nomeTime="Ocraus FC" 
@@ -119,10 +135,10 @@ function Escalacao(props) {
                     </div>
                     <Time player={2} jogadorSelecionado={jogadorSelecionado} nomeTime="Flamengo" time={timeFora} />
                 </div>
+                <div hidden={loading ? true : false}>
                 <Footer mute={mute} estadoMusica={mutado} voltar={props.voltar} />
+                </div>
             </>
-        )}
-            
         </>
     );
 }

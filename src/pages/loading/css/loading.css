@@ -1,0 +1,31 @@
+.loading {
+    /* top:0px; */
+    /* display: flex; */
+    /* flex: 1; */
+    /* justify-content: end; */
+    width: 960px;
+    background: rgb(128, 128, 128, 0.7);
+    height: 150px;
+    /* padding-top: 700px; */
+    /* bottom: 0; */
+    /* align-items: flex-end; */
+    /* align-content: flex-end; */
+    /* margin-top: 200px; */
+    /* background: url(https://cartola-we-api.herokuapp.com/img/loading.jpg) no-repeat center center; */
+    /* margin: 200px; */
+    /* top: 200px; */
+    /* position:absolute;  */
+    /* z-index:999; */
+    /* display: flex; */
+    /* max-width: 960px; */
+    margin: 0 auto;
+    margin-top: 40%;
+    /* margin-bottom: 70px; */
+    /* flex:1; */
+}
+.loading > h2 {
+    color: white;
+    padding-top: 50px;
+    padding-left: 30px;
+    font-size: 2.5em;
+}

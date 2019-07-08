@@ -12,8 +12,11 @@ body{
 }
 
 body {
-    background: url(https://cartola-we-api.herokuapp.com/img/back.jpg) no-repeat center center;
-
+    background: url(https://cartola-we-api.herokuapp.com/img/back.jpg) no-repeat center ;
+    /* background-size: 1366px 970px; */
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center top;
 }
 
 * {
@@ -21,6 +24,7 @@ body {
 }
 
 .container {
+    /* justify-content: end; */
     display: flex;
     max-width: 960px;
     margin: 0 auto;
@@ -360,6 +364,12 @@ h3, h2 {
 
 .escudo:hover {
     /* position:relative; */
+    background: rgb(151, 168, 186, 0.5);
+    border: black 1px solid;
+    border-radius: 5px;
+}
+
+#hover {
     background: rgb(151, 168, 186, 0.5);
     border: black 1px solid;
     border-radius: 5px;

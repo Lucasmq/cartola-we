@@ -108,6 +108,18 @@ function Times(props) {
 }
 
 function EscudosTimes(props) {
+    const [timeClicado, setTimeClicado] = useState(['','','','']);
+    const [timeMarcado, setTimeMarcado] = useState("");
+
+    function clicado(nome,escudo,lugar,timeId){
+        setTimeClicado([nome,escudo,lugar,timeId])
+        setTimeMarcado(timeId);
+    }
+    useEffect(() => {
+        localStorage.setItem("timeId"+timeClicado[2], timeClicado[3]) 
+    },[timeClicado])
+    
+
     return (
         <div className="times-escudos">
             {props.times[props.pag].map((time, index) => (
@@ -117,18 +129,25 @@ function EscudosTimes(props) {
                             nome={time.nome} 
                             timeId={time.time_id} 
                             infoTimeHover={props.infoTimeHover} 
-                            lugar={props.lugar}/>
+                            lugar={props.lugar}
+                            timeClicado={timeClicado}
+                            setTimeClicado={setTimeClicado}
+                            clicado={clicado}
+                            timeMarcado={timeMarcado}/>
                 </React.Fragment>
             ))}
         </div>
     )
 }
 
-
 function Escudo(props) {
-
+    
+    
     return (
-        <div className="escudo" onMouseOver={() => props.infoTimeHover(props.nome,props.escudo)} onClick={() => localStorage.setItem("timeId"+props.lugar, props.timeId)}>
+        <div className="escudo" onMouseLeave={()=> props.infoTimeHover(props.timeClicado[0],props.timeClicado[1])} 
+                                onMouseOver={() => props.infoTimeHover(props.nome,props.escudo)} 
+                                onClick={() => props.clicado(props.nome,props.escudo,props.lugar,props.timeId)}
+                                id={props.timeMarcado === props.timeId ? "hover" : "none"}>
             <img src={props.escudo} alt="escudo"/>
             <div className="foto-perfil">
                 <img src={props.fotoPerfil} alt="foto-perfil" />

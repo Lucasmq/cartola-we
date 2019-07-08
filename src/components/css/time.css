@@ -1,9 +1,5 @@
 /* Reset */
 
-body, h1, h2, h3, p, ul {
-    padding: 0px;
-    margin: 0px;
-}
 
 html {
 
@@ -17,11 +13,7 @@ html {
     /* cursor: default; */
 }
 
-body{
-    font-family: Lucia Console, sans-serif;
-    color: #252525;
-    
-}
+
 
 body::after, body::before {
     content: '';
@@ -29,10 +21,6 @@ body::after, body::before {
     clear: both;
 }
 
-body {
-    background: url(http://https://cartola-we-api.herokuapp.com/img/back.jpg) no-repeat center center;
-    /* background-size: 100%; */
-}
 
 .container-escalacao {
     max-width: 960px;
@@ -861,7 +849,7 @@ footer .menu-select {
 
 @media only screen and (min-height: 600px)  {
     body {
-        background-size: 1600px;
+        background-size: 100%;
     }
     html {
         /* margin: 0 000px; */
@@ -885,7 +873,7 @@ footer .menu-select {
 
 @media only screen and (min-height: 900px)  {
     body {
-        background-size: 1600px;
+        background-size: 100%;
     }
     html {
         /* margin: 0 000px; */
