@@ -31,7 +31,7 @@ body::after, body::before {
 
 body {
     background: url(http://https://cartola-we-api.herokuapp.com/img/back.jpg) no-repeat center center;
-    /* background-size: 1600px; */
+    /* background-size: 100%; */
 }
 
 .container-escalacao {
@@ -814,9 +814,15 @@ footer {
 }
 
 footer .menu-select {
+    /* flex: 1; */
+    display: flex;
     cursor: pointer;
     width: 960px;
     margin: 4px auto 0 auto;
+}
+
+.container-select-som {
+    flex: 1;
 }
 
 .menu-select::after, .menu-select::before {
@@ -825,6 +831,8 @@ footer .menu-select {
     clear: both;
 }
 .select-container {
+    /* display: flex; */
+    flex: 1;
     width: 60px;
     margin-left: 5px;
     float: left;
@@ -969,6 +977,44 @@ footer .menu-select {
     font-weight: bold;
 }
 
+.button-x {
+    flex: 1;
+    display: flex;
+    /* float: right; */
+    width: 25px;
+    height: 25px;
+    background: #585a59;
+    border-radius: 50%;
+    justify-content: space-around;
+    align-items: center;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    transform:rotate(45deg);
+    /* margin-right: 20px; */
+    /* left:2px; */
+}
 
+.button-x .x::after{
+    flex: none;
+    content: "+";
+    color: #3c91ff;
+    font-size: 2.2em;
+    width: 15px;
+    height: 15px;
+    /* margin-right: 2px; */
+    /* margin-top: 20px; */
+/* margin: 20px; */
 
+}
 
+.voltar > h1{
+    color: white;
+    margin-right: 10px;
+    font-size: 1.5em;
+}
+
+.button-container {
+    display: flex;
+    /* flex: 1; */
+    margin-right: 35px;
+}

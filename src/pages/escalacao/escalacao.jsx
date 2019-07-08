@@ -119,7 +119,7 @@ function Escalacao(props) {
                     </div>
                     <Time player={2} jogadorSelecionado={jogadorSelecionado} nomeTime="Flamengo" time={timeFora} />
                 </div>
-                <Footer mute={mute} estadoMusica={mutado} />
+                <Footer mute={mute} estadoMusica={mutado} voltar={props.voltar} />
             </>
         )}
             

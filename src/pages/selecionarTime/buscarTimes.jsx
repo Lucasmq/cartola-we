@@ -51,7 +51,7 @@ export default function BuscarTimes(props){
                             inicio={inicio}
                             infoTimeHoverCasa={infoTimeHoverCasa}
                             infoTimeHoverFora={infoTimeHoverFora}/>
-                <Footer />
+                <Footer setBuscarTime={props.setBuscarTime}/>
             </>
         
     )

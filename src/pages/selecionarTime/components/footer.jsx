@@ -1,21 +1,29 @@
-import React, { useState } from 'react';
-import { Redirect} from "react-router-dom";
+import React from 'react';
+
+// import { Redirect} from "react-router-dom";
 
 import './css/selecionarTime.css'
 
 export default function Footer(props) {
-    const [redirect, setRedirect] = useState(false);
+    // const [redirect, setRedirect] = useState(false);
 
-    return(
+    return (
         <div className="footer container">
-            {redirect && <Redirect to={{ pathname: "/escalacao" }} />}
+            <div className="aleatorio-container">
+                <div className="button-quadrado" >
+                    <div className="quadrado"></div>
+                </div>
+                <div className="aleatorio">
+                    <h1>Aleatório</h1>
+                </div>
+            </div>
 
-        <div className="button-quadrado" onClick={() => setRedirect(true)}>
-            <div className="quadrado"></div>
+
+            <div className={"button-confirma-escalacao"} onClick={() => props.setBuscarTime(false)}>
+                <div className={"bola"}>
+                </div>
+                    <h1>Confirmar</h1>
+            </div>
         </div>
-        <div className="aleatorio">
-            <h1>Aleatório</h1>
-        </div>
-    </div>
     )
 }
