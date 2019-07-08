@@ -871,6 +871,31 @@ footer .menu-select {
     }
 }
 
+@media only screen and (min-width: 300px)  {
+    body {
+        /* background-position: center;  */
+        background-size: 300px;
+    }
+    html {
+        /* margin: 0 000px; */
+        width: 300%; 
+    }
+
+    html {
+        transform: scale(0.34);
+        transform-origin: 0 0;
+        /* display: block; */
+        position: fixed;
+        -webkit-touch-callout: none;  /* iPhone OS, Safari */
+        -webkit-user-select: none;    /* Chrome, Safari 3 */
+        -khtml-user-select: none;     /* Safari 2 */
+        -moz-user-select: none;       /* Firefox */
+        -ms-user-select: none;        /* IE10+ */
+        user-select: none;            /* Possível implementação no futuro */
+        /* cursor: default; */
+    }
+}
+
 @media only screen and (min-height: 900px)  {
     body {
         background-size: 100%;
