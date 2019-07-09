@@ -65,7 +65,7 @@ function Jogador(props) {
         }
     }
     return (
-        <div onMouseLeave={() => props.jogadorSelecionado(null,null,null)} onMouseEnter={() => props.jogadorSelecionado(props.scout, props.nome, props.pos)} className={"time1-jogador "+expulso(props.scout)}>
+        <div onMouseLeave={() => props.jogadorSelecionado(null,null,null,null,null,null)} onMouseEnter={() => props.jogadorSelecionado(props.scout, props.nome, props.pos,props.fotoJogador,props.clubeIdJogador,props.pontos)} className={"time1-jogador "+expulso(props.scout)}>
             <h3 className="nome">{props.nome}</h3>
             {props.isCap &&  <img className={"cap-" + props.player} src={bracedeiraCap} alt="capitão" /> }
             {props.mostrarCartao ? 
@@ -108,7 +108,9 @@ function Jogadores(props) {
                                 isCap={jogador.capitao} 
                                 player={props.player} 
                                 mostrarCartao={mostrarCartao}
-                                scout={jogador.scout} />
+                                scout={jogador.scout} 
+                                fotoJogador={jogador.foto}
+                                clubeIdJogador={jogador.clube_id}/>
                     ))}
                 </div>
         </div>

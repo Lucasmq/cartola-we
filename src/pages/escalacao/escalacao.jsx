@@ -28,6 +28,10 @@ function Escalacao(props) {
     const [mutado, setMutado] = useState(true);
     const [scoutDoJogador, setScoutDoJogador] = useState(null);
     const [nomeJogador, setNomeJogador] = useState(null);
+    const [fotoJogador, setFotoJogador] = useState(null);
+    const [pontuacaoJogador, setPontuacaoJogador] = useState(null);
+
+    const [escudoClubeJogador, setEscudoClubeJogador] = useState(null);
     const [posicaoJogador, setPosicaoJogador] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -95,13 +99,21 @@ function Escalacao(props) {
         }
         setMutado(!mutado);
     }
-
-    function jogadorSelecionado(scout,nomeJogador, posicao){
+    /* Recebe os dados dos jogadores selecionados na escalação para atualizar os scouts */
+    function jogadorSelecionado(scout,nomeJogador, posicao, fotoJogador, clubeId, pontuacao){
         setScoutDoJogador(scout);
+        setFotoJogador(fotoJogador);
+        clubeId && setEscudoClubeJogador(retornaEscudoClube(clubeId));
         setNomeJogador(nomeJogador);
         setPosicaoJogador(posicao);
+        setPontuacaoJogador(pontuacao)
     }
 
+    function retornaEscudoClube(clubeId){
+        console.log(timeCasa);
+        console.log(clubeId);
+        return timeCasa["clubes"][""+clubeId]["escudos"]["45x45"]
+    }
 
     useEffect(() => {
         if(timeCasa && timeFora){
@@ -117,8 +129,7 @@ function Escalacao(props) {
     return (
         <>
         
-            <>
-        {loading && <Loading />}
+            {loading && <Loading />}
                 <div className="container-escalacao" hidden={loading ? true : false}>
                     <Time player={1} 
                           jogadorSelecionado={jogadorSelecionado} 
@@ -128,17 +139,23 @@ function Escalacao(props) {
                         {scoutDoJogador ?
                              <Scout scout={scoutDoJogador} 
                                     nomeJogador={nomeJogador} 
-                                    pos={posicaoJogador}/>
+                                    pos={posicaoJogador}
+                                    fotoJogador={fotoJogador}
+                                    escudoClubeJogador={escudoClubeJogador}
+                                    pontuacao={pontuacaoJogador}
+                                    />
                             :
                             <Menu musicMenu={playMenuHover} musicSelecao={clickMenu} timeCasa={timeCasa} timeFora={timeFora} />
                         }
                     </div>
-                    <Time player={2} jogadorSelecionado={jogadorSelecionado} nomeTime="Flamengo" time={timeFora} />
+                    <Time player={2} 
+                          jogadorSelecionado={jogadorSelecionado} 
+                          nomeTime="Flamengo" 
+                          time={timeFora} />
                 </div>
                 <div hidden={loading ? true : false}>
                 <Footer mute={mute} estadoMusica={mutado} voltar={props.voltar} />
                 </div>
-            </>
         </>
     );
 }
