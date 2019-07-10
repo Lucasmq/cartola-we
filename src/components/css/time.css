@@ -575,11 +575,13 @@ body::after, body::before {
 
 .foto-jogador > img {
     width: 70px;
+    border-radius: 50%;
+    background: white;
     /* align-items: center; */
     /* justify-content: space-around; */
 }
 .escudo-clube > img{
-    width: 40px;
+    width: 30px;
     /* position: absolute; */
     display: block;
     margin-left: -15px;

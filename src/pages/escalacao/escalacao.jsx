@@ -26,6 +26,7 @@ function Escalacao(props) {
     const [timeCasa, setTimeCasa] = useState(null);
     const [timeFora, setTimeFora] = useState(null);
     const [mutado, setMutado] = useState(true);
+    const [timeMontado, setTimeMontado] = useState(false);
     const [scoutDoJogador, setScoutDoJogador] = useState(null);
     const [nomeJogador, setNomeJogador] = useState(null);
     const [fotoJogador, setFotoJogador] = useState(null);
@@ -100,19 +101,18 @@ function Escalacao(props) {
         setMutado(!mutado);
     }
     /* Recebe os dados dos jogadores selecionados na escalação para atualizar os scouts */
-    function jogadorSelecionado(scout,nomeJogador, posicao, fotoJogador, clubeId, pontuacao){
+    function jogadorSelecionado(scout,nomeJogador, posicao, fotoJogador, clubeId, pontuacao, timeMontado){
         setScoutDoJogador(scout);
         setFotoJogador(fotoJogador);
-        clubeId && setEscudoClubeJogador(retornaEscudoClube(clubeId));
+        (clubeId && timeMontado) && setEscudoClubeJogador(retornaEscudoClube(clubeId));
         setNomeJogador(nomeJogador);
         setPosicaoJogador(posicao);
-        setPontuacaoJogador(pontuacao)
+        setPontuacaoJogador(pontuacao);
+        setTimeMontado(timeMontado);
     }
 
     function retornaEscudoClube(clubeId){
-        console.log(timeCasa);
-        console.log(clubeId);
-        return timeCasa["clubes"][""+clubeId]["escudos"]["45x45"]
+        return timeCasa["clubes"] ? timeCasa["clubes"][clubeId]["escudos"]["45x45"] : timeFora["clubes"][clubeId]["escudos"]["45x45"]; 
     }
 
     useEffect(() => {
@@ -136,7 +136,7 @@ function Escalacao(props) {
                           nomeTime="Ocraus FC" 
                           time={timeCasa} />
                     <div className="center-container">
-                        {scoutDoJogador ?
+                        {(timeMontado && scoutDoJogador ) ?
                              <Scout scout={scoutDoJogador} 
                                     nomeJogador={nomeJogador} 
                                     pos={posicaoJogador}

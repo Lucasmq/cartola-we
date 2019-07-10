@@ -96,12 +96,9 @@ export default function Scouts(props) {
     return (
         // {scouts}
         <div className="menu-container">
-            {/* <div className="info-jogadores"> */}
             <div className="menu-header">
                 <h2>{props.nomeJogador}</h2>
             </div>
-            {/* </div> */}
-
 
             <div className="menu-content">
                 <div className={"option-" + parOuImpar(1)}>
