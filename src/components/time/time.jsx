@@ -1,6 +1,7 @@
 import React ,{ useState } from 'react';
 import '../css/time.css';
-
+import bola from '../../img/bola.png'
+import bola_vermelha from '../../img/bola_vermelha.png'
 const URL = 'https://cartola-we-api.herokuapp.com/'
 
 function Header(props) {
@@ -49,6 +50,7 @@ function Jogador(props) {
             if(scoutCartao["CA"]){
                 return cartoes[1];
             }
+            // for 2 amarelos ou um vermelho, retorna o vermelho por enquanto
             if(scoutCartao["CV"] || scoutCartao["CA"] === 2){
                 return cartoes[0];
             }
@@ -56,6 +58,7 @@ function Jogador(props) {
         }
     }
 
+    // função para marcar o jogador como expulso
     function expulso(scout){
         if(scout){
             if(scout["CV"] || scout["CA"] === 2){
@@ -64,6 +67,54 @@ function Jogador(props) {
             return "";
         }
     }
+
+    function mostraInfoCartaoGol(index){
+        const cartoes = <div className={cartao(props.scout)}></div>;
+        const bolaGol = <><img src={bola} alt="bola de futebol"></img></>
+        const bolaGolContra = <img src={bola_vermelha} alt="bola de futebol"></img>
+
+        // let teste = Object.assign({},bolaGol,bolaGolContra);
+
+        function gol(){
+            let gols = [];
+            if(props.scout["G"]){
+                for (let i = 0; i < props.scout["G"]; i++) {
+                    gols.push(bolaGol);
+                }
+            }
+            if(props.scout["GC"]){
+                for (let i = 0; i < props.scout["GC"]; i++) {
+                    gols.push(bolaGolContra);
+                }
+            }
+            return gols;
+        }
+
+        // console.log(teste);
+        
+        const gols = <div className={"gol"}>
+                {gol().map((gol,index) =>(
+                    <React.Fragment key={index}>{gol}</React.Fragment>
+                ))}
+                {/* {bolaGolContra} */}
+            </div>
+
+        const pontosPosicao =   (<>
+                                    <h3 className="pontos">{props.pontos}</h3> 
+                                    <div className={props.posClass} >{props.pos}</div> 
+                                </>)
+
+        if(index === "cartao"){
+            return cartoes;
+        }else if(index === "gol") {
+            return gols;
+        }
+
+        return pontosPosicao;
+
+    }
+    // console.log(props.mostrarCartaoGol);
+
     return (
         <div onMouseLeave={() => props.jogadorSelecionado(null,null,null,null,null,null,false)} 
              onMouseEnter={() => props.jogadorSelecionado(props.scout, props.nome, props.pos,props.fotoJogador,props.clubeIdJogador,props.pontos,props.timeMotando)} 
@@ -71,33 +122,39 @@ function Jogador(props) {
 
             <h3 className="nome">{props.nome}</h3>
             {props.isCap &&  <img className={"cap-" + props.player} src={bracedeiraCap} alt="capitão" /> }
-            {props.mostrarCartao ? 
-                (<div className={cartao(props.scout)}></div>)
-                :
-                (<>
-                    <h3 className="pontos">{props.pontos}</h3> 
-                    <div className={props.posClass} >{props.pos}</div> 
-                </>)
-        }
-             
+            {mostraInfoCartaoGol(props.mostrarCartaoGol)}             
         </div>
     )
 }
 
 function Jogadores(props) {
-    const [mostrarCartao, setMostrarCartao] = useState(null);
-    function mostraCartoes(){
-        setMostrarCartao(!mostrarCartao);
+    const [indexMostraCartaoGol, setIndexMostraCartaoGol] = useState(0);
+    
+    const [mostrarCartaoGol] = useState(["posicoes","cartao","gol"]);
+    
+    function mostraCartaoGol(direcao){
+
+        if(direcao === 1){
+            if(indexMostraCartaoGol <= mostrarCartaoGol.length-1){
+                setIndexMostraCartaoGol((indexMostraCartaoGol+1)%3);
+            }   
+        }else if(direcao === -1){
+            if(indexMostraCartaoGol === 0){
+                setIndexMostraCartaoGol(2);
+            }
+            if(indexMostraCartaoGol > 0){
+                setIndexMostraCartaoGol((indexMostraCartaoGol-1)%3);
+            }
+        }
     }
 
     return (
         <div  className="time1-elenco">
             <div className="time1-elenco-header">
-                <div onClick={() => props.teste(2)} className="seta-esquerda"></div>
-
-                <h3 className="l1" onClick={() => mostraCartoes()}>L1</h3>
+                <div className="seta-esquerda"></div>
+                <h3 className="l1" onClick={() => mostraCartaoGol(-1)}>L1</h3>
                 <div className="seta-direita"></div>
-                <h3 className="r1" onClick={() => mostraCartoes()}>R1</h3>
+                <h3 className="r1" onClick={() => mostraCartaoGol(1)}>R1</h3>
             </div>
             {/* {console.log()} */}
                 <div className="time1-elenco-container">
@@ -110,7 +167,7 @@ function Jogadores(props) {
                                 pos={jogador.posicao} 
                                 isCap={jogador.capitao} 
                                 player={props.player} 
-                                mostrarCartao={mostrarCartao}
+                                mostrarCartaoGol={mostrarCartaoGol[indexMostraCartaoGol]}
                                 scout={jogador.scout} 
                                 fotoJogador={jogador.foto}
                                 clubeIdJogador={jogador.clube_id}
@@ -125,7 +182,6 @@ function Jogadores(props) {
 export default function Time(props) {
     return (
         <>
-        {/* {console.log(props.time)} */}
         {props.time && 
             (<div className={"time" + props.player}>
                 <Header nomeTime={props.time.time_info.nome} escudo={props.time.time_info.escudo_url}/>

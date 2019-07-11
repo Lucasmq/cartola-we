@@ -336,7 +336,8 @@ body::after, body::before {
     font-size: 1.45em;
     width: 170px;
     padding: 4px 4px 0;
-    float: left;
+    /* float: left; */
+    display: flex;
     border-right: #525252 1px solid;
     text-shadow: none;
 
@@ -348,7 +349,10 @@ body::after, body::before {
     z-index: 6;
     height: 33px;
     width: 50px;
-    float: left;
+    display: flex;
+    /* align-content: flex-end; */
+    justify-content: flex-end;
+    /* float: left; */
     /* border-left: #525252 1px solid; */
     text-align: right;
     padding: 3px 0px;
@@ -1075,4 +1079,13 @@ footer .menu-select {
     display: flex;
     /* flex: 1; */
     margin-right: 35px;
+}
+
+.gol {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    /* align-content: center; */
+    align-items: center;
+
 }
