@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cartola-we/static/css/main.d989c207.chunk.css",
+    "main.js": "/cartola-we/static/js/main.81954068.chunk.js",
+    "main.js.map": "/cartola-we/static/js/main.81954068.chunk.js.map",
+    "runtime~main.js": "/cartola-we/static/js/runtime~main.9094853e.js",
+    "runtime~main.js.map": "/cartola-we/static/js/runtime~main.9094853e.js.map",
+    "static/js/2.39d892fe.chunk.js": "/cartola-we/static/js/2.39d892fe.chunk.js",
+    "static/js/2.39d892fe.chunk.js.map": "/cartola-we/static/js/2.39d892fe.chunk.js.map",
+    "index.html": "/cartola-we/index.html",
+    "precache-manifest.2f22340524d1e3c507003b51f395de96.js": "/cartola-we/precache-manifest.2f22340524d1e3c507003b51f395de96.js",
+    "service-worker.js": "/cartola-we/service-worker.js",
+    "static/css/main.d989c207.chunk.css.map": "/cartola-we/static/css/main.d989c207.chunk.css.map"
+  }
+}
