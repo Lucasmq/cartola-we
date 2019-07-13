@@ -101,7 +101,7 @@ export default function Scouts(props) {
             </div>
 
             <div className="menu-content">
-            <div className="info-jogadores">
+                <div className="info-jogadores">
                     <div className="container-info-jogadores">
                         <div className="foto-jogador">
                             <img src={props.fotoJogador.replace("FORMATO", "80x80")} alt="foto-jogador" />
@@ -120,8 +120,8 @@ export default function Scouts(props) {
                 </div>
                 {props.scout && Object.keys(props.scout).map((scout, index) => (
                     <React.Fragment key={index}>
-                        <div key={index} className={"option-" + parOuImpar(index)}>
-                            <div className="quantidade-scout">{props.scout[scout]}</div>
+                        <div key={index} className={"option-" + parOuImpar(index+1)}>
+                            <div className="quantidade-scout"><span>{props.scout[scout]}</span></div>
                             <div className="nome-scout">{nomeScout(scout)}</div>
                             <div className={"pontos-scout " + corPontos(pontosScout(scout, props.scout[scout]), false)}>{pontosScout(scout, props.scout[scout])}</div>
                         </div>

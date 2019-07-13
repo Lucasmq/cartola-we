@@ -120,7 +120,8 @@ function Jogador(props) {
     // console.log(props.mostrarCartaoGol);
 
     return (
-        <div onMouseLeave={() => props.jogadorSelecionado(null,null,null,null,null,null,false)} 
+        <div 
+             onMouseLeave={() => props.jogadorSelecionado(null,null,null,null,null,null,false)} 
              onMouseEnter={() => props.jogadorSelecionado(props.scout, props.nome, props.pos,props.fotoJogador,props.clubeIdJogador,props.pontos,props.timeMotando)} 
              className={"time1-jogador "+expulso(props.scout)}>
 

@@ -973,27 +973,33 @@ footer .menu-select {
 .option-i ,.option-p{
     /* color: black; */
     display: flex;
-    justify-content: right;
-    justify-content: space-between
+    /* justify-content: right; */
+    /* justify-content: space-between */
 }
 
 .option-i .nome-scout, .option-p .nome-scout {
     /* background: blueviolet; */
-    flex:9;
+    flex:12;
     font-weight: bold;
     font-size: 0.8em;
 
 }
 
 .option-i .quantidade-scout, .option-p .quantidade-scout {
-    flex:1;
+    flex:2;
+    /* display: flex; */
+    /* align-self: center; */
+    /* padding-left: 10px; */
+    text-align: center;
+    /* align-content: center; */
+    /* align-items: center; */
     font-weight: bold;
     font-size: 0.8em;
 }
 
 .option-i .pontos-scout , .option-p .pontos-scout {
     /* background: blue; */
-    flex: 4;
+    flex: 3;
     font-size: 0.8em;
 }
 
