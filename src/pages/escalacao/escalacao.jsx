@@ -136,7 +136,7 @@ function Escalacao(props) {
                           nomeTime="Ocraus FC" 
                           time={timeCasa} />
                     <div className="center-container">
-                        {(timeMontado && scoutDoJogador ) ?
+                        {(timeMontado  ) ?
                              <Scout scout={scoutDoJogador} 
                                     nomeJogador={nomeJogador} 
                                     pos={posicaoJogador}

@@ -101,7 +101,17 @@ export default function Scouts(props) {
             </div>
 
             <div className="menu-content">
-                <div className={"option-" + parOuImpar(1)}>
+            <div className="info-jogadores">
+                    <div className="container-info-jogadores">
+                        <div className="foto-jogador">
+                            <img src={props.fotoJogador.replace("FORMATO", "80x80")} alt="foto-jogador" />
+                        </div>
+                        <div className="escudo-clube">
+                            <img src={props.escudoClubeJogador} alt="escudo-clube" />
+                        </div>
+                    </div>
+                </div>
+                <div className={"option-" + parOuImpar(2)}>
                     <div className="quantidade-scout">{""}</div>
                     <div className="nome-scout">Posição</div>
                     <div className={"pontos-scout"}>
@@ -116,22 +126,11 @@ export default function Scouts(props) {
                             <div className={"pontos-scout " + corPontos(pontosScout(scout, props.scout[scout]), false)}>{pontosScout(scout, props.scout[scout])}</div>
                         </div>
                     </React.Fragment>
-
                 ))}
-                <div className={"option-" + parOuImpar(1)}>
+                <div className={"option-" + parOuImpar(3)}>
                     <div className="quantidade-scout">{""}</div>
                     <div className="nome-scout">Total</div>
                     <div className={"pontos-scout " + corPontos(props.pontuacao, true)}>{props.pontuacao}</div>
-                </div>
-                <div className="info-jogadores">
-                    <div className="container-info-jogadores">
-                        <div className="foto-jogador">
-                            <img src={props.fotoJogador.replace("FORMATO", "80x80")} alt="foto-jogador" />
-                        </div>
-                        <div className="escudo-clube">
-                            <img src={props.escudoClubeJogador} alt="escudo-clube" />
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

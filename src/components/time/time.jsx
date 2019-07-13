@@ -54,8 +54,8 @@ function Jogador(props) {
             if(scoutCartao["CV"] || scoutCartao["CA"] === 2){
                 return cartoes[0];
             }
-            return cartoes[2];
         }
+        return cartoes[2];        
     }
 
     // função para marcar o jogador como expulso
@@ -66,6 +66,7 @@ function Jogador(props) {
             }
             return "";
         }
+        return "";
     }
 
     function mostraInfoCartaoGol(index){
@@ -76,18 +77,21 @@ function Jogador(props) {
         // let teste = Object.assign({},bolaGol,bolaGolContra);
 
         function gol(){
-            let gols = [];
-            if(props.scout["G"]){
-                for (let i = 0; i < props.scout["G"]; i++) {
-                    gols.push(bolaGol);
+            if(props.scout){
+                let gols = [];
+                if(props.scout["G"]){
+                    for (let i = 0; i < props.scout["G"]; i++) {
+                        gols.push(bolaGol);
+                    }
                 }
-            }
-            if(props.scout["GC"]){
-                for (let i = 0; i < props.scout["GC"]; i++) {
-                    gols.push(bolaGolContra);
+                if(props.scout["GC"]){
+                    for (let i = 0; i < props.scout["GC"]; i++) {
+                        gols.push(bolaGolContra);
+                    }
                 }
+                return gols;
             }
-            return gols;
+            return [];
         }
 
         // console.log(teste);

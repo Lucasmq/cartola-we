@@ -567,7 +567,7 @@ body::after, body::before {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: #a3a3a3;
+    background: #939393;
 
 }
 .container-info-jogadores{
@@ -1087,5 +1087,4 @@ footer .menu-select {
     justify-content: center;
     /* align-content: center; */
     align-items: center;
-
 }
