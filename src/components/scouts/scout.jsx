@@ -22,12 +22,14 @@ export default function Scouts(props) {
             "PE": -0.3,
             "SG": 5,
             "DP": 7,
-            "DD": 3,
+            "DD": 4,
             "GC": -5,
             "GS": -2,
             "FC": -0.5,
             "FS": 0.5,
-            "G": 8
+            "G": 8,
+            "PI": -0.1,
+            "DS": 1
         }
         const pontos = parseFloat((quantidade * scoutsValores[sigla]).toFixed((1)));
         return pontos;
@@ -88,6 +90,10 @@ export default function Scouts(props) {
                 return "Gols"
             case "I":
                 return "Impedimento"
+            case "DS":
+                return "Desarme"
+            case "PI":
+                return "Passe Incompleto"
             default:
                 break;
         }
