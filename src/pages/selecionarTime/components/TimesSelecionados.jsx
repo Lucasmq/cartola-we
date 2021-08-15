@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 
 import './css/selecionarTime.css'
-const URL = "http://localhost:3005/times?q="; //"https://cartola-we-api.herokuapp.com/times?q="
+const URL = "https://cartola-we-api.herokuapp.com/times?q="
 
 export default function TimesSelecionados(props) {
     

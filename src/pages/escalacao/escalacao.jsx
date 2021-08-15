@@ -9,7 +9,7 @@ import Scout from '../../components/scouts/scout'
 import Loading from '../loading/loading';
 
 
-const URL = "http://localhost:3005/"; //"https://cartola-we-api.herokuapp.com/"
+const URL = "https://cartola-we-api.herokuapp.com/"
    
 const menuHover = new Audio();
       menuHover.src = URL+'audio/hover_menu.mp3'
