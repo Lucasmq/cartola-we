@@ -189,6 +189,13 @@ body::after, body::before {
 .time1-elenco-container {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    height: 408px;
+}
+
+/* Largura da barra de rolagem */
+::-webkit-scrollbar {
+    width: 0px;
 }
 
 .time1-elenco-header {
@@ -306,7 +313,7 @@ body::after, body::before {
     border-right: #000000 1px solid;    
     height: 34px;
     text-shadow: none;
-
+    position: relative;
     /* display: flex; */
 }
 
@@ -337,10 +344,10 @@ body::after, body::before {
     width: 170px;
     padding: 4px 4px 0;
     /* float: left; */
-    display: flex;
+    /* display: flex; */
     border-right: #525252 1px solid;
     text-shadow: none;
-
+    height: 34px;
 }
 
 .time1-jogador > .pontos {
@@ -349,7 +356,7 @@ body::after, body::before {
     z-index: 6;
     height: 33px;
     width: 50px;
-    display: flex;
+    /* display: flex; */
     /* align-content: flex-end; */
     justify-content: flex-end;
     /* float: left; */
@@ -386,8 +393,9 @@ body::after, body::before {
 
 .cap-1 {
     position: absolute;
+    float: none;
     margin-left:170px; 
-    z-index: 5;
+    z-index: 6;
     width: 40px;
     height: 33px;
 }
@@ -791,6 +799,7 @@ body::after, body::before {
     border:none;
     border-left: #525252 1px solid;
     text-shadow: none;
+    height: 34px;
 }
 
 .time2 .time1-jogador > .pontos {

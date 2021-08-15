@@ -69,10 +69,12 @@ function Jogador(props) {
         return "";
     }
 
-    function mostraInfoCartaoGol(index){
-        const cartoes = <div className={cartao(props.scout)}></div>;
-        const bolaGol = <><img src={bola} alt="bola de futebol"></img></>
-        const bolaGolContra = <img src={bola_vermelha} alt="bola de futebol"></img>
+    function mostraInfoCartaoGol(index, isCap){
+        // style={{marginLeft : "-10px"}}
+        // style={ isCap ? {marginLeft : "10px"} : {zIndex : 5}}
+        const cartoes = <div className={cartao(props.scout)} ></div>;
+        const bolaGol = <><img src={bola} alt="bola de futebol gol a favor" ></img></>
+        const bolaGolContra = <img src={bola_vermelha} alt="bola de futebol gol contra" ></img>
 
         // let teste = Object.assign({},bolaGol,bolaGolContra);
 
@@ -104,7 +106,7 @@ function Jogador(props) {
             </div>
 
         const pontosPosicao =   (<>
-                                    <h3 className="pontos">{props.pontos}</h3> 
+                                    <h3 className="pontos" >{props.pontos}</h3> 
                                     <div className={props.posClass} >{props.pos}</div> 
                                 </>)
 
@@ -122,11 +124,12 @@ function Jogador(props) {
     return (
         <div onMouseLeave={() => props.jogadorSelecionado(null,null,null,null,null,null,false)} 
              onMouseEnter={() => props.jogadorSelecionado(props.scout, props.nome, props.pos,props.fotoJogador,props.clubeIdJogador,props.pontos,props.timeMotando)} 
-             className={"time1-jogador "+expulso(props.scout)}>
+             className={"time1-jogador "+expulso(props.scout)}
+             style={{background: props.reserva ? "#737eb3" : "#898989"}}>
 
             <h3 className="nome">{props.nome}</h3>
             {props.isCap &&  <img className={"cap-" + props.player} src={bracedeiraCap} alt="capitão" /> }
-            {mostraInfoCartaoGol(props.mostrarCartaoGol)}             
+            {mostraInfoCartaoGol(props.mostrarCartaoGol, props.isCap)}             
         </div>
     )
 }
@@ -176,6 +179,25 @@ function Jogadores(props) {
                                 fotoJogador={jogador.foto}
                                 clubeIdJogador={jogador.clube_id}
                                 timeMotando={props.time.montou_time}
+                                reserva={jogador.reserva}
+                                />
+                                ))}
+                    {props.time.reservas && props.time.reservas.map((jogador,index) => (
+                        <Jogador jogadorSelecionado={props.jogadorSelecionado}
+                                key={index}
+                                nome={jogador.apelido}    
+                                pontos={jogador.pontos_num} 
+                                posClass={jogador.posicao_classe} 
+                                pos={jogador.posicao} 
+                                isCap={jogador.capitao} 
+                                player={props.player} 
+                                mostrarCartaoGol={mostrarCartaoGol[indexMostraCartaoGol]}
+                                scout={jogador.scout} 
+                                fotoJogador={jogador.foto}
+                                clubeIdJogador={jogador.clube_id}
+                                timeMotando={props.time.montou_time}
+                                reserva={jogador.reserva}
+                                style={{color: "red"}}
                                 />
                                 ))}
                 </div>

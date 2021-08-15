@@ -9,7 +9,7 @@ import Scout from '../../components/scouts/scout'
 import Loading from '../loading/loading';
 
 
-const URL = "https://cartola-we-api.herokuapp.com/"
+const URL = "http://localhost:3005/"; //"https://cartola-we-api.herokuapp.com/"
    
 const menuHover = new Audio();
       menuHover.src = URL+'audio/hover_menu.mp3'
@@ -104,7 +104,7 @@ function Escalacao(props) {
     function jogadorSelecionado(scout,nomeJogador, posicao, fotoJogador, clubeId, pontuacao, timeMontado){
         setScoutDoJogador(scout);
         setFotoJogador(fotoJogador);
-        (clubeId && timeMontado) && setEscudoClubeJogador(retornaEscudoClube(clubeId));
+        setEscudoClubeJogador(retornaEscudoClube(clubeId));
         setNomeJogador(nomeJogador);
         setPosicaoJogador(posicao);
         setPontuacaoJogador(pontuacao);
@@ -112,7 +112,12 @@ function Escalacao(props) {
     }
 
     function retornaEscudoClube(clubeId){
-        return timeCasa["clubes"] ? timeCasa["clubes"][clubeId]["escudos"]["45x45"] : timeFora["clubes"][clubeId]["escudos"]["45x45"]; 
+        console.log(clubeId)
+        if(clubeId && clubeId !== 1) {
+            return timeCasa["clubes"] ? timeCasa["clubes"][clubeId]["escudos"]["45x45"] : timeFora["clubes"][clubeId]["escudos"]["45x45"]; 
+        } else {
+            return "https://cartolafc.globo.com/dist/6.11.1/img/emptystate_escudo.svg";
+        }
     }
 
     useEffect(() => {
@@ -136,7 +141,7 @@ function Escalacao(props) {
                           nomeTime="Ocraus FC" 
                           time={timeCasa} />
                     <div className="center-container">
-                        {(timeMontado  ) ?
+                        {(timeMontado) ?
                              <Scout scout={scoutDoJogador} 
                                     nomeJogador={nomeJogador} 
                                     pos={posicaoJogador}

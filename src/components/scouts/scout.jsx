@@ -29,7 +29,8 @@ export default function Scouts(props) {
             "FS": 0.5,
             "G": 8,
             "PI": -0.1,
-            "DS": 1
+            "DS": 1,
+            "DE": 1
         }
         const pontos = parseFloat((quantidade * scoutsValores[sigla]).toFixed((1)));
         return pontos;
@@ -94,6 +95,8 @@ export default function Scouts(props) {
                 return "Desarme"
             case "PI":
                 return "Passe Incompleto"
+            case "DE":
+                return "Defesa"
             default:
                 break;
         }
@@ -110,10 +113,10 @@ export default function Scouts(props) {
             <div className="info-jogadores">
                     <div className="container-info-jogadores">
                         <div className="foto-jogador">
-                            <img src={props.fotoJogador.replace("FORMATO", "80x80")} alt="foto-jogador" />
+                            {<img src={props.fotoJogador ? props.fotoJogador.replace("FORMATO", "80x80") : "https://cartolafc.globo.com/dist/6.11.1/img/emptystate_jogador.svg"} alt="foto-jogador" />}
                         </div>
                         <div className="escudo-clube">
-                            <img src={props.escudoClubeJogador} alt="escudo-clube" />
+                            <img src={props.escudoClubeJogador ? props.escudoClubeJogador : "https://cartolafc.globo.com/dist/6.11.1/img/emptystate_escudo.svg"} alt="escudo-clube" />
                         </div>
                     </div>
                 </div>

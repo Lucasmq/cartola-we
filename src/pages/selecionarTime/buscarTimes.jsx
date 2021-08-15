@@ -26,8 +26,6 @@ export default function BuscarTimes(props){
         setInicio(false);
     }
 
-    
-
     function infoTimeHoverCasa(nomeTime,escudo){
         setInfoTimeCasa([nomeTime,escudo]);
     }

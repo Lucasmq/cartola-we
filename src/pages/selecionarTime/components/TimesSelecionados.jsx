@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 
 import './css/selecionarTime.css'
-const URL = "https://cartola-we-api.herokuapp.com/times?q="
+const URL = "http://localhost:3005/times?q="; //"https://cartola-we-api.herokuapp.com/times?q="
 
 export default function TimesSelecionados(props) {
     
@@ -82,11 +82,11 @@ function NomeTime(props) {
                         {/* <button onClick={() => buscaTime()}>OK</button> */}
                         {/* {colo em OnClick para que quando eu clicar nele ele resetar, ai no lugar de placeholder, eu boto o valor que quero, ou não} */}
                         <input autoComplete="off" type="text" onKeyDown={(e)=> verificaEnter(e)} onChange={e => setNomeTime(e.target.value)} className="input-time" name="inputTime" value={nomeTime} placeholder="Buscar Time" ></input>
-                        <div className={"button-bola"+props.player} onClick={() => buscaTime()}>
+                        {/* <div className={"button-bola"+props.player} onClick={() => buscaTime()}>
                             <div className={"bola"+props.player}>
                                 <span>Buscar</span>    
                             </div>
-                        </div>
+                        </div> */}
                     </>
                     }
                 </div>

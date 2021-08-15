@@ -596,8 +596,9 @@ h3, h2 {
     /* justify-content: space-around; */
     /* align-items: center; */
     /* flex: 1; */
-    padding: 20px;
+    /* padding: 20px; */
     font-size: 1.4em;
+    width: 280px;
 }
 .nome-time2 .input-time {
     text-align: end;
