@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './css/selecionarTime.css'
 const graficoJpg = process.env.REACT_APP_URL_SERVER + "img/grafico.jpg";
-const bandeirasJpg = process.env.REACT_APP_URL_SERVER + "img/bandeiras.jpg";
+const bandeirasJpg = process.env.REACT_APP_URL_SERVER + "img/bandeiras/";
 export default function TodosTimes(props) {
     return (
         <div className="time-container container">
