@@ -2,7 +2,7 @@ import React ,{ useState } from 'react';
 import '../css/time.css';
 import bola from '../../img/bola.png'
 import bola_vermelha from '../../img/bola_vermelha.png'
-const URL = 'https://cartola-we-api.herokuapp.com/'
+const URL = 'http://172.22.139.135:3005/'
 
 function Header(props) {
     return (

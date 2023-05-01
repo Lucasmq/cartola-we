@@ -33,7 +33,7 @@ return(
                                                     escudo1={props.timeCasa.time_info.escudo_url} 
                                                     escudo2={props.timeFora.time_info.escudo_url}/> }
 
-    {(props.timeCasa) && (props.timeFora) && placarPatrimonio && <PlacarInformativo   nomeInfo={"Patrimônio C$"} 
+    {(props.timeCasa) && (props.timeFora) && placarPatrimonio && <PlacarInformativo   nomeInfo={"Património C$"} 
                                                     valor1={props.timeCasa.patrimonio} 
                                                     valor2={props.timeFora.patrimonio} 
                                                     escudo1={props.timeCasa.time_info.escudo_url}                                                     

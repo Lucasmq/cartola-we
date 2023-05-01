@@ -1,8 +1,8 @@
 import React from 'react';
 import '../css/time.css';
 
-const somOn = 'https://cartola-we-api.herokuapp.com/img/somOn.png';
-const somOff = 'https://cartola-we-api.herokuapp.com/img/somOff.png';
+const somOn = 'http://172.22.139.135:3005/img/somOn.png';
+const somOff = 'http://172.22.139.135:3005/img/somOff.png';
 
 
 export default function Footer(props){

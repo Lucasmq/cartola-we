@@ -9,7 +9,7 @@ import Scout from '../../components/scouts/scout'
 import Loading from '../loading/loading';
 
 
-const URL = "https://cartola-we-api.herokuapp.com/"
+const URL = "http://172.22.139.135:3005/"
    
 const menuHover = new Audio();
       menuHover.src = URL+'audio/hover_menu.mp3'
@@ -42,6 +42,7 @@ function Escalacao(props) {
         async function fetchData() {
             const response = await axios.get(URL+"time/"+localStorage.getItem("timeIdcasa"));
             const time = response.data.time;
+            console.log(time)
             setTimeCasa(time);
         }
 
