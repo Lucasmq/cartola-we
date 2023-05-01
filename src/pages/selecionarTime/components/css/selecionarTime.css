@@ -12,7 +12,7 @@ body{
 }
 
 body {
-    background: url(http://172.22.139.135:3005/img/back.jpg) no-repeat center ;
+    background: url(https://cartola-we-server.onrender.com/img/back.jpg) no-repeat center ;
     /* background-size: 1366px 970px; */
     background-size: 100%;
     background-attachment: fixed;

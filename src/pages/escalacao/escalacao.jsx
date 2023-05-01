@@ -9,7 +9,7 @@ import Scout from '../../components/scouts/scout'
 import Loading from '../loading/loading';
 
 
-const URL = "http://172.22.139.135:3005/"
+const URL = process.env.REACT_APP_URL_SERVER
    
 const menuHover = new Audio();
       menuHover.src = URL+'audio/hover_menu.mp3'

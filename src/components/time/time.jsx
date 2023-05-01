@@ -2,7 +2,7 @@ import React ,{ useState } from 'react';
 import '../css/time.css';
 import bola from '../../img/bola.png'
 import bola_vermelha from '../../img/bola_vermelha.png'
-const URL = 'http://172.22.139.135:3005/'
+const URL = process.env.REACT_APP_URL_SERVER
 
 function Header(props) {
     return (

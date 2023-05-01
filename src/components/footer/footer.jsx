@@ -1,8 +1,8 @@
 import React from 'react';
 import '../css/time.css';
 
-const somOn = 'http://172.22.139.135:3005/img/somOn.png';
-const somOff = 'http://172.22.139.135:3005/img/somOff.png';
+const somOn = process.env.REACT_APP_URL_SERVER + "/img/somOn.png";
+const somOff = process.env.REACT_APP_URL_SERVER + "/img/somOff.png";
 
 
 export default function Footer(props){

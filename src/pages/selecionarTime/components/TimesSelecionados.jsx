@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import axios from 'axios';
 
 import './css/selecionarTime.css'
-const URL = "http://172.22.139.135:3005/times?q="
+const URL = process.env.REACT_APP_URL_SERVER + "times?q="
 
 export default function TimesSelecionados(props) {
+    console.log(URL)
     
     return(
         <div className="times-nomes">

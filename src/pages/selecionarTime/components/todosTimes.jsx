@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import './css/selecionarTime.css'
-
+const graficoJpg = process.env.REACT_APP_URL_SERVER + "img/grafico.jpg";
+const bandeirasJpg = process.env.REACT_APP_URL_SERVER + "img/bandeiras.jpg";
 export default function TodosTimes(props) {
     return (
         <div className="time-container container">
@@ -13,7 +14,7 @@ export default function TodosTimes(props) {
 
             <div className="grafico-center">
                 <div className="grafico">
-                    <img src="http://172.22.139.135:3005/img/grafico.jpg" alt="grafico" />
+                    <img src={graficoJpg} alt="grafico" />
                 </div>
             </div>
             {props.timesFora ? 
@@ -54,7 +55,7 @@ function EscudosEstaticos(props) {
     let numeroEscudos = [];
 
     for (let i = 0; i < props.numeroEscudos; i++) {
-        numeroEscudos.push(<SomenteEscudo key={i} escudo={"http://172.22.139.135:3005/img/bandeiras/"+props.regioes+(i+1)+".jpg"} />)        
+        numeroEscudos.push(<SomenteEscudo key={i} escudo={bandeirasJpg+props.regioes+(i+1)+".jpg"} />)        
     }
 
     return (
